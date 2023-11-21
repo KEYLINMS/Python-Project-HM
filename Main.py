@@ -1,6 +1,6 @@
 import random
 def hangman():
-
+# made a list 
     word = random.choice(["ironman" , "hulk" , "thor" , "captainamerica" , "clint" , "loki" , "avengers" , "nick" , "phil" , "maria" ])
     validLetters = 'abcdefghijklmnopqrstuvwxyz'
     turns = 10
@@ -19,7 +19,7 @@ def hangman():
             print(main)
             print("You win!")
             break
-
+# guess the word
         print("Guess the word:" , main)
         guess = input()
 
@@ -28,7 +28,7 @@ def hangman():
         else:
             print("Enter a valid character")
             guess = input()
-
+# You have a few guess
         if guess not in word:
             turns = turns - 1
             if turns == 9:
@@ -88,7 +88,7 @@ def hangman():
                 print("    /|\      ")
                 print("    / \     ")
                 break
-
+# Enter your name so it saves you score
 name = input("Enter your name")
 print("Welcome" , name )
 print("-------------------")
