@@ -1,15 +1,16 @@
 import random
+# randomly selecting a word/ launched hangman game
 def hangman():
-# made a list 
+
     word = random.choice(["ironman" , "hulk" , "thor" , "captainamerica" , "clint" , "loki" , "avengers" , "nick" , "phil" , "maria" ])
     validLetters = 'abcdefghijklmnopqrstuvwxyz'
     turns = 10
     guessmade = ''
-
+# keeping track of missed attempts
     while len(word) > 0:
         main = ""
         missed = 0
-
+#  indicating the player has successfully guessed the word or not
         for letter in word:
             if letter in guessmade:
                 main = main + letter
@@ -28,7 +29,7 @@ def hangman():
         else:
             print("Enter a valid character")
             guess = input()
-# You have a few guess
+# the code handles the logic for updating and displaying the remaining turns in the hangman game
         if guess not in word:
             turns = turns - 1
             if turns == 9:
@@ -88,6 +89,7 @@ def hangman():
                 print("    /|\      ")
                 print("    / \     ")
                 break
+            # indicating the end of the game
 # Enter your name so it saves you score
 name = input("Enter your name")
 print("Welcome" , name )
